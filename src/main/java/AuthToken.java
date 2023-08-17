@@ -14,7 +14,7 @@ public class AuthToken {
     private String refreshToken;
     private String scope;
 
-     public String getAccessToken() {
+    public String getAccessToken() {
         return accessToken;
     }
     public String getTokenType() {
@@ -31,11 +31,11 @@ public class AuthToken {
     }
 
     private AuthToken(AuthBuilder builder) {
-        this.accessToken=builder.accessToken;
-        this.tokenType=builder.tokenType;
-        this.expiresIn=builder.expiresIn;
-        this.refreshToken=builder.refreshToken;
-        this.scope=builder.scope;
+        this.accessToken = builder.accessToken;
+        this.tokenType = builder.tokenType;
+        this.expiresIn = builder.expiresIn;
+        this.refreshToken = builder.refreshToken;
+        this.scope = `builder.scope;
     }
 
     public static class AuthBuilder() {
@@ -46,11 +46,11 @@ public class AuthToken {
         private String scope;
 
         public AuthBuilder(String aT, String tT, String eI, String rT, String s) {
-            this.accessToken=aT;
-            this.tokenType=tT;
-            this.expiresIn=eI;
-            this.refreshToken=rT;
-            this.scope=s;
+            this.accessToken = aT;
+            this.tokenType = tT;
+            this.expiresIn = eI;
+            this.refreshToken = rT;
+            this.scope = s;
         }
 
         public AuthToken build() {
