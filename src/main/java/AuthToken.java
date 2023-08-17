@@ -1,3 +1,5 @@
+import java.util.Locale;
+
 public class AuthToken {
     /*
      *    {
@@ -8,11 +10,18 @@ public class AuthToken {
      *      "scope": "identify"
      *      }
      */
-    private String accessToken;
-    private String tokenType;
-    private String expiresIn;
-    private String refreshToken;
-    private String scope;
+    private final String accessToken;
+    private final String tokenType;
+    private final String expiresIn;
+    private final String refreshToken;
+    private final String scope;
+    private AuthToken(Builder builder) {
+        this.accessToken = builder.accessToken;
+        this.tokenType = builder.tokenType;
+        this.expiresIn = builder.expiresIn;
+        this.refreshToken = builder.refreshToken;
+        this.scope = builder.scope;
+    }
 
     public String getAccessToken() {
         return accessToken;
@@ -30,32 +39,36 @@ public class AuthToken {
         return scope;
     }
 
-    private AuthToken(AuthBuilder builder) {
-        this.accessToken = builder.accessToken;
-        this.tokenType = builder.tokenType;
-        this.expiresIn = builder.expiresIn;
-        this.refreshToken = builder.refreshToken;
-        this.scope = `builder.scope;
-    }
 
-    public static class AuthBuilder() {
+    public static class Builder {
         private String accessToken;
         private String tokenType;
         private String expiresIn;
         private String refreshToken;
         private String scope;
 
-        public AuthBuilder(String aT, String tT, String eI, String rT, String s) {
-            this.accessToken = aT;
-            this.tokenType = tT;
-            this.expiresIn = eI;
-            this.refreshToken = rT;
-            this.scope = s;
+        public Builder accessToken(String accessToken) {
+            this.accessToken = accessToken;
+            return this;
         }
-
+        public Builder tokenType(String tokenType) {
+            this.tokenType = tokenType;
+            return this;
+        }
+        public Builder expiresIn(String expiresIn) {
+            this.expiresIn = expiresIn;
+            return this;
+        }
+        public Builder refreshToken(String refreshToken) {
+            this.refreshToken = refreshToken;
+            return this;
+        }
+        public Builder scope(String scope) {
+            this.scope = scope;
+            return this;
+        }
         public AuthToken build() {
             return new AuthToken(this);
         }
     }
-
 }
