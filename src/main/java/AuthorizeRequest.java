@@ -1,4 +1,3 @@
-
 public class AuthorizeRequest {
     private final String clientId;
     private final String clientSecret;

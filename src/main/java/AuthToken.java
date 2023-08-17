@@ -1,4 +1,3 @@
-
 public class AuthToken {
     /*
      *    {
@@ -14,7 +13,7 @@ public class AuthToken {
     private final String expiresIn;
     private final String refreshToken;
     private final String scope;
-    private AuthToken(Builder builder) {
+    public AuthToken(Builder builder) {
         this.accessToken = builder.accessToken;
         this.tokenType = builder.tokenType;
         this.expiresIn = builder.expiresIn;
