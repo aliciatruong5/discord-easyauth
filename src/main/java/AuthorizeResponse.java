@@ -12,5 +12,8 @@ public class AuthorizeResponse {
             this.authToken = authToken;
             return this;
         }
+        public AuthorizeResponse build() {
+            return new AuthorizeResponse(this);
+        }
     }
 }
