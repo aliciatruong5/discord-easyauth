@@ -14,7 +14,7 @@ public class AuthorizeUrlRequest {
         this.clientId = builder.clientId;
         this.scope = builder.scope;
         this.state = builder.state;
-        this.redirectUri = builder.state;
+        this.redirectUri = builder.redirectUri;
         this.prompt = builder.prompt;
     }
 
